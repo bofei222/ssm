@@ -23,7 +23,7 @@ public class UserTest {
 		SqlSession session = sqlSessionFactory.openSession();
 		Object o = session.selectOne("test.findUserById", 1);
 		System.out.println(o);
-		Object o2 = session.selectOne("test.findUserById", 1	);
+		Object o2 = session.selectOne("test.findUserById", 1);
 		System.out.println(o2);
 	}
 
