@@ -17,6 +17,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User findUserById(Integer id) {
 		SqlSession session = sqlSessionFactory.openSession();
+
 		return session.selectOne("test.findUserById", id);
 	}
 	
@@ -25,8 +26,14 @@ public class UserDaoImpl implements UserDao {
 		SqlSession session = sqlSessionFactory.openSession();
 		return session.selectList("test.findUserByUserName", username);
 	}
-	
-	
-	
-	
+
+	@Override
+	public int insertUser(User user) {
+		SqlSession session = sqlSessionFactory.openSession();
+		int insert = session.insert("test.insertUser", user);
+
+		return insert;
+	}
+
+
 }
