@@ -7,6 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.bf.dao.UserDao;
 import com.bf.pojo.User;
+import org.springframework.transaction.annotation.Transactional;
 
 public class UserDaoTest {
 	
