@@ -7,12 +7,15 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import com.bf.pojo.User;
+import org.springframework.transaction.annotation.Transactional;
 
 public class UserDaoImpl extends SqlSessionDaoSupport implements UserDao {
 	
 	@Override
+	@Transactional
 	public User findUserById(Integer id) {
 		SqlSession session = this.getSqlSession();
+		session.selectOne("test.findUserById", id);
 		return session.selectOne("test.findUserById", id);
 	}
 	

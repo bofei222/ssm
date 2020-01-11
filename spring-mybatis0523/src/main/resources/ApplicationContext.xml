@@ -20,7 +20,13 @@
 		<property name="maxActive" value="10" />
 		<property name="maxIdle" value="5" />
 	</bean>
-	
+
+	<!-- 事务管理器 -->
+	<!--<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		&lt;!&ndash; 数据源 &ndash;&gt;
+		<property name="dataSource" ref="dataSource" />
+	</bean>-->
 	<!-- 整合后session工厂归Spring管理 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- 指定mybatis核心配置文件 -->
@@ -28,7 +34,7 @@
 		<!-- 指定session工厂使用的数据源 -->
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
+
 	<!-- 配置原生Dao实现 -->
 	<bean id="userDao" class="com.bf.dao.UserDaoImpl">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
@@ -46,4 +52,5 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.bf.mapper"></property>
 	</bean>
+	<!--<tx:annotation-driven transaction-manager="transactionManager" />-->
 </beans>
