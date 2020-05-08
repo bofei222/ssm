@@ -18,7 +18,7 @@ public class BFSqlSessionV1 {
     }
 
     public <T> T getMapper(Class<T> clazz) {
-        return configuration.getMapper();
+        return configuration.getMapper(clazz);
     }
 
 }

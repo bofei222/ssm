@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class BFExecutorV1 {
 
-    public <T> T query(String sql, String arg){
+    public <T> T query(String sql2, String arg){
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -58,5 +58,6 @@ public class BFExecutorV1 {
             }
 
         }
+        return null;
     }
 }

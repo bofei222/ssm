@@ -2,6 +2,7 @@ package com.bf.pojo;
 
 import java.util.Date;
 
+//
 public class CustomOrders extends Orders{
 	private int uid;
 	private String username;
